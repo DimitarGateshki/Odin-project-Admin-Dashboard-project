@@ -1,3 +1,14 @@
+:root{
+    --side:#54BAB9;
+    --acc:#E9DAC1;
+    --main1:#F7ECDE;
+    --main2:#FBF8F1;
+    --font-color:#020202;
+    background-color:#f2f2f2 ;
+    font-family: "Source Sans Pro", sans-serif;
+
+
+}
 *{
     padding: 0%;
     margin: 0%;
@@ -10,15 +21,134 @@
     grid-template-rows:1fr 5fr ;
 }
 
+/*Sidebar*/
 .sidebar{
     display: grid;
     grid-row: 1 / -1;
-        background-color: #54BAB9;
+    background-color: var(--side);
+    grid-template-rows: 10% 1fr 1fr;
+    min-width: 90%;
+    color: var(--main2);
 }
 
+.logo{
+    width: 95%;
+    height: auto;
+    padding: 10px;
+}
+
+.first-menu-section,
+.second-menu-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+/*Header*/
 .header{
     display: grid;
     grid-template-columns: 1% min-content 3fr 1fr;
     grid-template-rows: min-content 1fr;
-        background-color: #FBF8F1;
+    background-color: var(--main1);
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    box-shadow: 0 5px -2px rgba(0, 0, 0, 0.1) ;
+}
+
+img[src="imgs/magnify.png"]{
+justify-self: end;
+grid-column: 2;
+}
+
+#search{
+    border-radius: 10px;
+    background-color: #757575 ;
+    border: none;
+    padding: 8px;
+    max-width: 700px;
+}
+
+.second-section{
+    display: grid;
+    gap:30px;
+    grid-template-columns: min-content max-content 1fr;
+}
+
+img[src="imgs/bell-ring.svg"]{
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+    width: 30px;
+}
+
+.profile-pic{
+    justify-self: center;
+    height: 50px;
+    width: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image:url(imgs/pexels-gabriele-brancati-8562889.jpg) ;
+    background-size: 100%;
+}
+
+.acc-name{
+    justify-self: flex-start;
+    align-self: center;
+    position: relative;
+}
+
+.profile-pic2{
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+    border: 1px black solid;
+    background-image: url(imgs/pexels-gabriele-brancati-8562889.jpg);
+    background-size: 100%;
+    margin-left: 30px;
+}
+
+.header-second-row{
+    display: flex;
+    width: 100%;
+    grid-column: 1/-1;
+    justify-content: space-between;
+}
+
+.header-section{
+    display: flex;
+    gap:30px;
+}
+
+.header-section2{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 100px;
+}
+
+.header-section2 button{
+    padding: 10px 35px;
+    border-radius: 15px;
+    border: 1px solid #757575;
+    font-size: 1rem;
+    font-weight: 700;
+
+
+}
+
+.header-section2 button:hover{
+    background-color: #757575;
+    color: var(--main1);
 }
