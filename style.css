@@ -5,16 +5,22 @@
     --main2:#FBF8F1;
     --font-color:#020202;
     background-color:#f2f2f2 ;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
 
 
 }
 *{
     padding: 0%;
     margin: 0%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    
+
 }
 .page{
     display: grid;
+    background-color: var(--main2);
     height: 100vh;
     width: 100vw;
     grid-template-columns:1fr 5fr ;
@@ -35,6 +41,7 @@
     width: 95%;
     height: auto;
     padding: 10px;
+    margin-bottom: 10%;
 }
 
 .first-menu-section,
@@ -44,12 +51,35 @@
     align-items: flex-start;
     list-style: none;
     padding: 0;
+    padding-left: 2%;
     margin: 0;
+    font-size: 1.5rem;
 }
 .icon{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    
 }
+
+.first-menu-section > li,
+.second-menu-section > li {
+  text-align: start;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.first-menu-section > li,
+.second-menu-section > li{
+  vertical-align: bottom;
+}
+
+li:hover {
+    color: var(--acc);
+  }
+  
+  li {
+    cursor: pointer;
+  }
 
 /*Header*/
 .header{
@@ -70,8 +100,8 @@ grid-column: 2;
 
 #search{
     border-radius: 10px;
-    background-color: #757575 ;
-    border: none;
+    background-color: var(--main2) ;
+    border: 2 solid #020202;
     padding: 8px;
     max-width: 700px;
 }
@@ -152,3 +182,147 @@ img[src="imgs/bell-ring.svg"]{
     background-color: #757575;
     color: var(--main1);
 }
+
+/* Main content*/
+.content{
+    margin: 20px;
+    margin-top: 35px;
+    grid-row: 2/-1;
+    grid-column: 2/-1;
+    background-color: var(--main2);
+    display: grid;
+    gap:15px;
+    grid-template-areas: 
+    "project project project project project comments"
+    "project project project project project trending"
+    ;
+}
+
+.projects{
+    grid-area: project;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px,100%));
+    grid-template-rows: repeat(3,minmax(300px,100%));
+}
+
+.projects .title{
+    position: absolute;
+
+    top: -2%;
+}
+
+.card{
+    display: grid;
+    border-left: var(--side) 10px solid;
+    padding:5%;
+    border-radius: 10px;
+    margin: 5%;
+    background-color: var(--main1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.card p{
+    color: var(--font-color);
+}
+
+.card div{
+    justify-self: end;
+}
+
+.card img{
+    width: 10%;
+    margin-top: 5%;
+    margin-left: 17%;
+}
+
+/*Comments*/
+
+.comments{
+    position: relative;
+    border-radius: 10px;
+    margin-left: -10%;
+    padding: 5%;
+    background-color: rgb(242, 242, 242);
+    height: fit-content;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.no-board{
+    border-top: none;
+}
+
+.comments p{
+    width: 80%;
+    margin-left:10%;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0;
+    color: var(--font-color);
+}
+
+.comments h4{
+    border-top: gray 2px solid;
+    text-align: center;
+    padding-top: 2%;
+}
+
+/*Trending*/
+
+.trending{
+    position: relative;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.trending div{
+    display: grid;
+    position: relative;
+    padding: 2%;
+    margin-bottom: 40%;
+    grid-template-columns: min-content 2fr;
+    width: 70%;
+}
+
+.trending img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 40%;
+    margin-right: 5%;
+    border-radius: 50%;
+  }
+
+  .trending p {
+    position: absolute;
+    top: 50%;
+    color: var(--font-color);
+  }
+
+  .trending .title{
+    top: 1%;
+    left: 1%;
+    padding: 2%;
+    position: absolute;
+  }
+
+  img {
+    cursor: pointer;
+  }
+  
+  .avatar {
+    min-width: fit-content;
+  }
+ 
